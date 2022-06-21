@@ -12,3 +12,4 @@ Pay attention to the three modules:
 3. Run the client using the javafx:run goal in the client module.
 4. Press the button and see what happens!
 
+*notice javafx doesnt work well on m1 computers
