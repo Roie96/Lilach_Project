@@ -3,10 +3,6 @@ package il.server;
 import il.entities.*;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-
-import static il.server.SimpleServer.getAllItems;
 
 public class ComplainConrtol{
 
@@ -78,21 +74,5 @@ public class ComplainConrtol{
         return text;
     }
 
-
-    public static LinkedList<Complain> getAllnComplaint(int storeID){
-        testDB.openSession();
-        List<Complain> complains = SimpleServer.getAllItems(Complain.class);
-        testDB.closeSession();
-        LinkedList<Complain> c = new LinkedList<>();
-        for(Complain comp : complains){
-            if(storeID!=-1){
-                 if(comp.getStore().getId()==storeID)
-                     c.add(comp.getComplainForClient());
-            }
-            else
-                c.add(comp.getComplainForClient());
-        }
-        return c;
-    }
 
 }

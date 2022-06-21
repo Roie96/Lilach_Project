@@ -1,15 +1,12 @@
 package il.server;
 
-import il.entities.Message;
+
 import il.entities.Product;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+
 
 public class CatalogControl {
 

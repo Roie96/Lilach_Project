@@ -189,20 +189,6 @@ public class UserControl {
         testDB.closeSession();
     }
 
-//    public static void setPermission(int empID, int p, boolean isWorker){
-//        if (!isWorker)
-//            return;
-//        testDB.openSession();
-//        Employee e = null;
-//        e = testDB.session.get(Employee.class, empID);
-//        if (e != null) {
-//            e.setPermission(p);
-//            testDB.session.flush();
-//            testDB.session.getTransaction().commit(); // Save everything.
-//        }
-//        testDB.closeSession();
-//    }
-
     public static void setAddress(int userID, String mail, boolean isWorker){
         if (isWorker)
             return;
@@ -275,28 +261,6 @@ public class UserControl {
         testDB.session.flush();
         testDB.session.getTransaction().commit(); // Save everything.
         testDB.closeSession();
-    }
-
-
-
-    public static LinkedList<User> getAllnUser(){
-        List<User> complains = SimpleServer.getAllItems(User.class);
-        LinkedList<User> c = new LinkedList<>();
-        for(User comp : complains){
-            c.add(comp.getUserForClien());
-        }
-        return c;
-    }
-
-    public static LinkedList<Employee> getAllnEmployee(int storeID){
-        testDB.openSession();
-        List<Employee> complains = SimpleServer.getAllItems(Employee.class);
-        testDB.closeSession();
-        LinkedList<Employee> c = new LinkedList<>();
-        for(Employee comp : complains){
-            c.add(comp);
-        }
-        return c;
     }
 
 

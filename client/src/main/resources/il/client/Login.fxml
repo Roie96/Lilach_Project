@@ -59,7 +59,7 @@
                   <VBox alignment="TOP_CENTER" prefHeight="123.0" prefWidth="306.0" spacing="20.0">
                      <children>
                         <MFXButton fx:id="loginBTN" buttonType="RAISED" onAction="#LoginSumbitted" prefHeight="37.0" prefWidth="84.0" rippleAnimateShadow="true" rippleColor="#c9d9ff" styleClass="simple-btn" stylesheets="@CSSfiles/Buttons.css" text="Login" textFill="#979797" />
-                        <MFXToggleButton id="customToggleButton" fx:id="workerChecker" contentDisposition="TOP" onMouseClicked="#WorkerChecked" stylesheets="@CSSfiles/css/ChecksRadiosToggles.css" text="Are you work here?" textFill="#979797" />
+                        <MFXToggleButton id="customToggleButton" fx:id="workerChecker" contentDisposition="TOP" onMouseClicked="#WorkerChecked" stylesheets="@CSSfiles/css/ChecksRadiosToggles.css" text="Do you work here?" textFill="#979797" />
                      </children>
                   </VBox>
                </children>

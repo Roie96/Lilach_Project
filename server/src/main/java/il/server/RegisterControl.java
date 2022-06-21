@@ -3,12 +3,9 @@ package il.server;
 import il.entities.Store;
 import il.entities.User;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.LinkedList;
+
 import java.util.List;
 
 public class RegisterControl {
@@ -18,8 +15,7 @@ public class RegisterControl {
 
     public static String checknewUser(User newUser){
         List<User> lUsers = SimpleServer.getAllItems(User.class);
-//        compare_name c = new compare_name();
-//        int result = Collections.binarySearch(lUsers,newUser, c.comparename());
+
         for (User user: lUsers){
             if (user.getUserName().equals(newUser.getUserName()) || user.getIdentifyNumbers().equals(newUser.getIdentifyNumbers()) ||
                     user.getCreditCard().equals(newUser.getCreditCard()))

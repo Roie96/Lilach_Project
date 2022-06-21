@@ -168,25 +168,4 @@ public class LoginControl {
         testDB.closeSession();
     }
 
-
-//
-//        testDB.openSssion();
-////        CriteriaBuilder builder = testDB.session.getCriteriaBuilder();
-////        CriteriaQuery<User> query = builder.createQuery(User.class);
-////        Root<User> root = query.from(User.class);
-////        query.orderBy(builder.asc(root.get("userName")));
-////        List<User> data = testDB.session.createQuery(query.orderBy()).getResultList();
-////        LinkedList<User> listItems = new LinkedList<>(data);
-////
-////        for (User user : listItems){
-////            if(user.getUserName().equals(username)){
-////                user.setLogin(false);
-////            }
-////        }
-//
-//        testDB.session.flush();
-//        testDB.session.getTransaction().commit(); // Save everything.
-//        testDB.closeSession();
-//    }
-
 }

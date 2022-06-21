@@ -108,23 +108,10 @@ public class SimpleServer extends AbstractServer {
                 if (message.getMessage().equals("getCatalogItems")) {
                     sendMessage.setMessage("item catalog list");
                     sendMessage.setListItem(getAllItems(Product.class));
-    //                List<Store> stores = getAllItems(Store.class);
-    //                LinkedList<Store> newStores= new LinkedList<>();
-    //                for(Store s : stores)
-    //                    newStores.add(s.getStoreForClient());
-    //                sendMessage.setListStors(newStores);
                     sendMessage.setListStors(getAllItems(Store.class));
                     client.sendToClient(sendMessage);
                     System.out.println("send init data to: " + client.getInetAddress());
                 }
-
-    //            if (message.getMessage().equals("getStore")) {
-    //                sendMessage.setMessage("item store list");
-    //                sendMessage.setListStors(getAllItems(Store.class));;
-    //                client.sendToClient(sendMessage);
-    //                System.out.println("send stores to client");
-    //            }
-
 
                 if (message.getMessage().equals("logout")) {
                     int id = message.getIddatabase();
@@ -137,10 +124,12 @@ public class SimpleServer extends AbstractServer {
 
                 if (message.getMessage().equals("newItem")) {
                     CatalogControl.newItem(message.getProduct());
+                    sendItemsToAll();
                 }
 
                 if (message.getMessage().equals("setImageItem")) {
                     CatalogControl.setImage(message.getIdItem(), message.getbFile());
+                    sendItemsToAll();
                 }
 
                 if (message.getMessage().equals("register")) {
@@ -195,7 +184,6 @@ public class SimpleServer extends AbstractServer {
                     sendItemsToAll();
                 }
                 if (message.getMessage().equals("cancelOrder")) {
-    //                OrderControl.cancelOrder(message.getOrderID(),message.getTimeCancel(), message.getDateCancel());
                     OrderControl.cancelOrder(message.getOrderID());
                     if(message.getRefund()>0)
                         OrderControl.refund(message.getOrderID(),message.getRefund());
@@ -236,9 +224,9 @@ public class SimpleServer extends AbstractServer {
                         sendMessage.setUodateResult(result);
                         sendMessage.setListEmploeeys(getAllItems(Employee.class));
                         sendMessage.setListUsers(getAllItems(User.class));
-                        System.out.println("send new data to cleint");
+                        System.out.println("send new data to client");
                         client.sendToClient(sendMessage);
-                        System.out.println("send new data to cleint");
+                        System.out.println("send new data to client");
                     }
 
                 } catch(IOException e){
