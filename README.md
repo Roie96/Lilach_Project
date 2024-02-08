@@ -1,5 +1,4 @@
-# # Lliach - Project 
-# Flower Shop
+# Lliach - Project 
 Lilach Flower Shop Desktop Application using Java Programming Language with JavaFX, Hibernate, Maven & OCSF.
 
 Database - MySQL.
